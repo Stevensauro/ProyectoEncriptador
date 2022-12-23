@@ -1,10 +1,20 @@
-function strReplace(myStr){
-      
-    var myStr = document.getElementById("textString").value
-    var newStr = myStr.replace(/e/g, "enter")
+function encriptar(texto = document.getElementById("textoString").value){
     
-    // Insert modified string in paragraph
-    document.getElementById("textString").value = newStr
+    texto = texto.replace(/(\r\n|\n|\r)/gm," ")
+    const regex = /^[a-z ]+$/gm //Regular Expression
     
-    console.log(textString.value)
+    let result = regex.test(texto)
+    
+   
+    if( result == true && texto != 0 ){
+      textoEncriptado = texto.replace(/e/g, "enter")
+      document.getElementById("resultado").innerHTML = textoEncriptado
+    } else if (result == false && Boolean(texto) == true){
+      alert("Error - Utiliza solamente letras minusculas!")
+    } else{
+      alert("Error - Necesitas escribir algo!")
+    }
+    console.log(result)  
+    console.log(Boolean(texto))
 }
+

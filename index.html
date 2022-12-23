@@ -3,8 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"/>
     <title>Homepage</title>
-
 </head>
 <body>
     <header>
@@ -12,10 +12,14 @@
     </header>
     
     <form>
-        <input id="textString" type="text">
-        <button type="button" onclick="strReplace();">Encriptar</button>
+        <textarea id="textoString" cols="2" wrap="hard" autocomplete="off" placeholder="Inserta tu texto aqui!"></textarea>
+        <button type="button" onclick="encriptar();">Encriptar</button>
     </form>
 
-<script type="text/javascript" src="JS/encriptador.js"></script>
+    <div>
+        <h1>Resultado</h1>
+        <p id="resultado">E</p>
+    </div>
+    <script type="text/javascript" src="JS/encriptador.js"></script>
 </body>
 </html>

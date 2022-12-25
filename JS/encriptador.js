@@ -5,6 +5,7 @@ function encriptar(texto = document.getElementById("textoString").value){
     let htmlResultadoChildren = document.getElementById("contenedorResultado").children
 
     texto = texto.replace(/(\r\n|\n|\r)/gm," ")
+
     const regex = /^[a-z ]+$/gm //Regular Expression
     
     let resultado = regex.test(texto)
@@ -19,7 +20,7 @@ function encriptar(texto = document.getElementById("textoString").value){
     
     } else{
     
-        textoEncriptado = texto
+        let textoEncriptado = texto
           .replaceAll('e', 'enter')
           .replaceAll('i', 'imes')
           .replaceAll('a', 'ai')
@@ -33,8 +34,9 @@ function encriptar(texto = document.getElementById("textoString").value){
         <button type="button" onclick="copiarTexto();">Copiar Resultado</button>`
 
       } else{
-        
+
         htmlResultado.children[1].innerHTML = textoEncriptado
+        
       }
 
     }
@@ -63,7 +65,7 @@ function desencriptar(texto = document.getElementById("textoString").value){
   
   } else{
   
-      textoEncriptado = texto
+      let textoEncriptado = texto
         .replaceAll('enter', 'e')
         .replaceAll('imes', 'i')
         .replaceAll('ai', 'a')

@@ -9,35 +9,84 @@ function encriptar(texto = document.getElementById("textoString").value){
     
     let resultado = regex.test(texto)
 
-    if( resultado == true && texto != 0 ){
+    if( texto == 0 ){
+      
+      alert("Error - Necesitas escribir algo!")
 
-      textoEncriptado = texto.replace(/e/g, "enter")
-
-      if (htmlResultadoChildren.length < 2){
-
-        htmlResultado.innerHTML += `<p id="resultado">${textoEncriptado}</p>`
-
-      } else{
-        htmlResultado.children[1].innerHTML = textoEncriptado
-      }
-
-    } else if (result == false && Boolean(texto) == true){
+    } else if (resultado == false && Boolean(texto) == true){
     
       alert("Error - Utiliza solamente letras minusculas!")
     
     } else{
     
-      alert("Error - Necesitas escribir algo!")
-    
+        textoEncriptado = texto
+          .replaceAll('e', 'enter')
+          .replaceAll('i', 'imes')
+          .replaceAll('a', 'ai')
+          .replaceAll('o', 'ober')
+          .replaceAll('u', 'ufat')
+
+      if (htmlResultadoChildren.length < 2){
+
+        htmlResultado.innerHTML += `<p id="resultado">${textoEncriptado}</p>
+        
+        <button type="button" onclick="copiarTexto();">Copiar Resultado</button>`
+
+      } else{
+        
+        htmlResultado.children[1].innerHTML = textoEncriptado
+      }
+
     }
 
 }
 
 
+function desencriptar(texto = document.getElementById("textoString").value){
+
+  let contenedorResultado = document.getElementById("contenedorResultado")
+
+  let contenedorResultadoChildren = document.getElementById("contenedorResultado").children
+
+  texto = texto.replace(/(\r\n|\n|\r)/gm," ")
+  const regex = /^[a-z ]+$/gm //Regular Expression
+  
+  let resultado = regex.test(texto)
+
+  if( texto == 0 ){
+    
+    alert("Error - Necesitas escribir algo!")
+
+  } else if (resultado == false && Boolean(texto) == true){
+  
+    alert("Error - Utiliza solamente letras minusculas!")
+  
+  } else{
+  
+      textoEncriptado = texto
+        .replaceAll('enter', 'e')
+        .replaceAll('imes', 'i')
+        .replaceAll('ai', 'a')
+        .replaceAll('ober', 'o')
+        .replaceAll('ufat', 'u')
+
+    if (contenedorResultadoChildren.length < 2){
+
+      contenedorResultado.innerHTML += `<button type="button" onclick="desencriptar();">Desencriptar</button><p id="resultado">${textoEncriptado}</p>`
+
+    } else{
+      
+      contenedorResultado.children[1].innerHTML = textoEncriptado
+    }
+
+  }
+
+}
 
 
-/*
-    console.log(Boolean(texto))
-    console.log(resultado)
-*/
+function copiarTexto() {
+  let texto = document.getElementById("resultado").textContent 
 
+  navigator.clipboard.writeText(texto);
+ alert("Texto ha sido copiado con exito!")
+}

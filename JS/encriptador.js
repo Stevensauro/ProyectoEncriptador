@@ -1,8 +1,8 @@
 function encriptar(texto = document.getElementById("textoString").value){
     
-    let htmlResultado = document.getElementById("contenedorResultado")
+    let contenedorResultado = document.getElementById("contenedorResultado")
 
-    let htmlResultadoChildren = document.getElementById("contenedorResultado").children
+    let contenedorResultadoChildren = document.getElementById("contenedorResultado").children
 
     texto = texto.replace(/(\r\n|\n|\r)/gm," ")
 
@@ -27,15 +27,15 @@ function encriptar(texto = document.getElementById("textoString").value){
           .replaceAll('o', 'ober')
           .replaceAll('u', 'ufat')
 
-      if (htmlResultadoChildren.length < 2){
+      if (contenedorResultadoChildren.length < 2){
 
-        htmlResultado.innerHTML += `<p id="resultado">${textoEncriptado}</p>
+        contenedorResultado.innerHTML += `<p class="fs-5" id="resultado">${textoEncriptado}</p>
         
-        <button type="button" onclick="copiarTexto();">Copiar Resultado</button>`
+        <button class="btn btn-warning" type="button" onclick="copiarTexto();">Copiar Resultado</button>`
 
       } else{
 
-        htmlResultado.children[1].innerHTML = textoEncriptado
+        contenedorResultado.children[1].innerHTML = textoEncriptado
         
       }
 
@@ -74,7 +74,9 @@ function desencriptar(texto = document.getElementById("textoString").value){
 
     if (contenedorResultadoChildren.length < 2){
 
-      contenedorResultado.innerHTML += `<button type="button" onclick="desencriptar();">Desencriptar</button><p id="resultado">${textoEncriptado}</p>`
+      contenedorResultado.innerHTML += `<p class="fs-5" id="resultado">${textoEncriptado}</p>
+        
+      <button class="btn btn-warning" type="button" onclick="copiarTexto();">Copiar Resultado</button>`
 
     } else{
       

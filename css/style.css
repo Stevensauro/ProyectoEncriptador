@@ -1,5 +1,9 @@
 #textoString{
-    width: 1000px;
-    height: 200px;
+    width: 100%;
+    height: 400px;
     resize: none;
+}
+
+::placeholder{
+    color: white;
 }

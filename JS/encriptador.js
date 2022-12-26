@@ -29,13 +29,13 @@ function encriptar(texto = document.getElementById("textoString").value){
 
       if (contenedorResultadoChildren.length < 2){
 
-        contenedorResultado.innerHTML += `<p class="fs-5" id="resultado">${textoEncriptado}</p>
+        contenedorResultado.innerHTML += `<div class="card-text"><p class="fs-5" id="resultado">${textoEncriptado}</p></div>
         
         <button class="btn btn-warning" type="button" onclick="copiarTexto();">Copiar Resultado</button>`
 
       } else{
 
-        contenedorResultado.children[1].innerHTML = textoEncriptado
+        contenedorResultado.children[1].innerHTML = `<p class="fs-5" id="resultado">${textoEncriptado}</p>`
         
       }
 
@@ -72,16 +72,17 @@ function desencriptar(texto = document.getElementById("textoString").value){
         .replaceAll('ober', 'o')
         .replaceAll('ufat', 'u')
 
-    if (contenedorResultadoChildren.length < 2){
+      if (contenedorResultadoChildren.length < 2){
 
-      contenedorResultado.innerHTML += `<p class="fs-5" id="resultado">${textoEncriptado}</p>
+        contenedorResultado.innerHTML += `<div class="card-text"><p class="fs-5" id="resultado">${textoEncriptado}</p></div>
         
-      <button class="btn btn-warning" type="button" onclick="copiarTexto();">Copiar Resultado</button>`
+        <button class="btn btn-warning" type="button" onclick="copiarTexto();">Copiar Resultado</button>`
 
-    } else{
-      
-      contenedorResultado.children[1].innerHTML = textoEncriptado
-    }
+      } else{
+
+        contenedorResultado.children[1].innerHTML = `<p class="fs-5" id="resultado">${textoEncriptado}</p>`
+        
+      }
 
   }
 

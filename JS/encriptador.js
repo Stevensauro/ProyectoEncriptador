@@ -27,7 +27,7 @@ function encriptar(texto = document.getElementById("textoString").value){
           .replaceAll('o', 'ober')
           .replaceAll('u', 'ufat')
 
-      if (contenedorResultadoChildren.length < 2){
+      if (contenedorResultadoChildren.length < 3){
 
         contenedorResultado.innerHTML += `<div class="card-text"><p class="fs-5" id="resultado">${textoEncriptado}</p></div>
         

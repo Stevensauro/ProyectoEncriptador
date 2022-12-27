@@ -10,10 +10,10 @@
 
 }
 
-::placeholder{
+#textoString::placeholder{
     color: white;
 }
 
 .container-footer{
-    margin-top: 20px;
+    margin-top: 65px;
 }

@@ -93,5 +93,5 @@ function copiarTexto() {
   let texto = document.getElementById("resultado").textContent 
 
   navigator.clipboard.writeText(texto);
- alert("Texto ha sido copiado con exito!")
+  alert("Texto ha sido copiado con exito!")
 }
